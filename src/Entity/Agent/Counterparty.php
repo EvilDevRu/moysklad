@@ -23,6 +23,74 @@ class Counterparty extends MetaEntity
      * @Type("string")
      * @Generator()
      */
+    public $description;
+
+    /**
+     * @Type("string")
+     * @Generator()
+     */
+    public $email;
+
+    /**
+     * @Type("string")
+     * @Generator()
+     */
+    public $phone;
+
+    /**
+     * @Type("string")
+     * @Generator()
+     */
+    public $externalCode;
+
+    /**
+     * @Type("string")
+     * @Generator()
+     */
+    public $inn;
+
+    /**
+     * @Type("boolean")
+     * @Generator()
+     */
+    public $shared;
+
+    /**
+     * @Type("boolean")
+     * @Generator()
+     */
+    public $archived;
+
+    /**
+     * @Type("array<MoySklad\Entity\Attribute>")
+     */
+    public $attributes;
+
+    /**
+     * @Type("DateTime<'Y-m-d H:i:s.v'>")
+     */
+    public $created;
+
+    /**
+     * @Type("MoySklad\Entity\Agent\Employee")
+     */
+    public $owner;
+
+    /**
+     * @Type("MoySklad\Entity\Group")
+     * @Generator(type="object", anyFromExists=true)
+     */
+    public $group;
+
+    /**
+     * @Type("DateTime<'Y-m-d H:i:s.v'>")
+     */
+    public $updated;
+
+    /**
+     * @Type("string")
+     * @Generator()
+     */
     public $name;
 
     /**
