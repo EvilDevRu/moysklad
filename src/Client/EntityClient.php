@@ -272,6 +272,38 @@ class EntityClient
         return new StatusClient($this->api);
     }
 
+    /**
+     * @return RetailDemandClient
+     */
+    public function retaildemand(): RetailDemandClient
+    {
+        return new RetailDemandClient($this->api);
+    }
+
+    /**
+     * @return RetailSalesReturnClient
+     */
+    public function retailsalesreturn(): RetailSalesReturnClient
+    {
+        return new RetailSalesReturnClient($this->api);
+    }
+
+    /**
+     * @return RetailDrawerCashInClient
+     */
+    public function retaildrawercashin(): RetailDrawerCashInClient
+    {
+        return new RetailDrawerCashInClient($this->api);
+    }
+
+    /**
+     * @return RetailDrawerCashOutClient
+     */
+    public function retaildrawercashout(): RetailDrawerCashOutClient
+    {
+        return new RetailDrawerCashOutClient($this->api);
+    }
+
     public function getAllClassObjects(string $class): array
     {
         return $this->byClass($class)->getList()->rows;
@@ -309,5 +341,13 @@ class EntityClient
     public function getByMeta(Meta $meta): object
     {
         return RequestExecutor::path($this->api, $meta->href)->get($meta->getClassName());
+    }
+
+    /**
+     * @return WebHookClient
+     */
+    public function webhook() : WebHookClient
+    {
+        return new WebHookClient($this->api);
     }
 }
